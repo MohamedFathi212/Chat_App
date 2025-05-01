@@ -26,7 +26,7 @@ class MessageSent implements ShouldBroadcast
         $this->receiver_id = $receiver_id;
         $this->sender_name = $sender_name;
         $this->sender_image = $sender_image ?? 'default-avatar.jpg'; 
-        $this->time = now()->timezone('Egypt/Cairo')->format('h:i A');
+        $this->time = now()->timezone('Africa/Cairo')->format('h:i A');
     }
     public function broadcastOn()
     {

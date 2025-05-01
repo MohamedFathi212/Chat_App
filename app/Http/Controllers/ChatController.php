@@ -25,10 +25,10 @@ class ChatController extends Controller
 
     public function sendMessage(Request $request){
         $userId = session('LoggedUserInfo');
-        $reciverId = $request->query('receiver_id');
+        $reciverId = $request->receiver_id;
 
         $message = $request->message;
-
+        $user = User::find($userId);
         $chat = Chat::create([
             'sender_id' => $userId,
             'receiver_id' => $reciverId,
